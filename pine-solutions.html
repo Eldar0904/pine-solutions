@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="ru"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: rgba(0, 0, 0, .12);
+  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #ffffff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #F3F3F7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #ffffff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #ffffff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #ffffff;
+  --color-overlay: rgba(0, 0, 0, .5);
+  --color-shadow: rgba(0, 0, 0, .08);
+  --color-hover: rgba(0, 0, 0, .05);
+  --color-tooltip-bg: rgba(0, 0, 0, .85);
+  --color-tooltip-text: #ffffff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4);
+  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #F3F3F7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333333;
+  --color-graph-node-text-dim: #7F8C8D;
+  --color-graph-edge-default: #95A5A6;
+  --color-graph-edge-cross: #E67E22;
+  --color-graph-edge-text: #666666;
+  --color-graph-edge-stroke: #ffffff;
+  --color-graph-highlight-bg: #FF6B6B;
+  --color-graph-highlight-border: #E74C3C;
+  --color-graph-search-bg: #FFD700;
+  --color-graph-search-border: #FFA500;
+  --color-graph-focus-border: #C0392B;
+  --color-graph-external-border: #95A5A6;
+  --color-graph-cat-file: #3498DB;
+  --color-graph-cat-folder: #7F8C8D;
+  --color-graph-cat-file-aggregate: #2980B9;
+  --color-graph-cat-class: #9B59B6;
+  --color-graph-cat-function: #2ECC71;
+  --color-graph-cat-method: #1ABC9C;
+  --color-graph-cat-variable: #F39C12;
+  --color-graph-cat-import: #D35400;
+  --color-graph-cat-module: #5B6ABF;
+  --color-graph-cat-concept: #E74C3C;
+  --color-graph-cat-person: #FF6B6B;
+  --color-graph-cat-org: #4ECDC4;
+  --color-graph-cat-organization: #4ECDC4;
+  --color-graph-cat-product: #A29BFE;
+  --color-graph-cat-metric: #FD79A8;
+  --color-graph-cat-location: #34495E;
+  --color-graph-cat-date: #E056A0;
+  --color-graph-cat-code: #3498DB;
+  --color-graph-cat-doc: #7F8C8D;
+  --color-graph-cat-url: #00B894;
+  --color-graph-cat-email: #6C5CE7;
+  --color-graph-cat-unknown: #BDC3C7;
+  --color-graph-rel-contains: #BDC3C7;
+  --color-graph-rel-extends: #9B59B6;
+  --color-graph-rel-implements: #3498DB;
+  --color-graph-rel-imports: #E67E22;
+  --color-graph-rel-uses: #2ECC71;
+  --color-graph-rel-calls: #27AE60;
+  --color-graph-rel-references: #F39C12;
+  --color-graph-rel-related-to: #95A5A6;
+  --color-graph-rel-works-on: #E74C3C;
+  --color-graph-rel-owns: #1ABC9C;
+  --color-graph-rel-depends-on: #E67E22;
+  --color-graph-rel-parent-of: #BDC3C7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: rgba(180, 0, 170, 1);
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PINE Workflows — Витрина решений</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="[REDACTED_CONN_STRING]://400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bg: #f8f6ff;
+  --surface: #ffffff;
+  --text: #1e1b4b;
+  --text-secondary: #4c4878;
+  --text-muted: #9490b8;
+  --border: #e8e4f4;
+  --border-light: #f0edf8;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow-sm: 0 2px 8px rgba(99,82,180,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 8px 24px rgba(99,82,180,0.08), 0 2px 6px rgba(0,0,0,0.03);
+  --shadow-lg: 0 16px 48px rgba(99,82,180,0.12), 0 4px 12px rgba(0,0,0,0.04);
+
+  --legal: #8b5cf6;
+  --proc: #3b82f6;
+  --acad: #10b981;
+  --pr: #f43f5e;
+  --b2b: #06b6d4;
+  --dist: #84cc16;
+  --wh: #f59e0b;
+  --fin: #ef4444;
+  --ops: #14b8a6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 52px 36px 80px;
+}
+
+/* ─── Editable (no hover flash — looks persistent, still editable) ─── */
+[contenteditable="true"] {
+  outline: none;
+  border-radius: 4px;
+  caret-color: #8b5cf6;
+  cursor: text;
+}
+[contenteditable="true"]:hover,
+[contenteditable="true"]:focus {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ─── Header ─── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  opacity: 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+}
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+.logo-text span {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.header-badge {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Editorial Homepage ─── */
+.editorial-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.7fr);
+  gap: 72px;
+  align-items: end;
+  margin-bottom: 38px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+}
+.editorial-kicker {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #8b5cf6;
+  margin-bottom: 20px;
+}
+.editorial-hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(44px, 5.3vw, 68px);
+  font-weight: 700;
+  letter-spacing: -2.4px;
+  line-height: 1.02;
+  max-width: 780px;
+  color: var(--text);
+}
+.headline-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.07em;
+  margin-bottom: -0.07em;
+}
+.headline-line-inner {
+  display: block;
+  color: inherit;
+  opacity: 0;
+  transform: translateY(105%);
+  animation: headlineLineReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.headline-line:nth-child(2) .headline-line-inner {
+  animation-delay: 0.12s;
+}
+@keyframes headlineLineReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.editorial-aside {
+  padding-left: 24px;
+  border-left: 2px solid #8b5cf6;
+  margin-bottom: 7px;
+}
+.editorial-index {
+  display: block;
+  margin-bottom: 18px;
+  color: #8b5cf6;
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.editorial-aside p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+.editorial-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font: 500 12px/1.4 'JetBrains Mono', monospace;
+}
+.editorial-meta-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #8b5cf6;
+}
+
+/* ─── Department Directory ─── */
+.directory {
+  margin-top: -14px;
+  margin-bottom: 36px;
+}
+.directory-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+  opacity: 0;
+}
+.directory-heading h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+.directory-heading span {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+.filter-btn {
+  padding: 9px 18px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+.filter-btn:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background: #faf5ff;
+}
+.filter-btn.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.25);
+}
+
+/* ─── Department Preview (one big card per dept) ─── */
+.dept-previews {
+  margin-bottom: 80px;
+  display: none;
+}
+.dept-previews.visible {
+  display: block;
+}
+.dept-preview-card {
+  display: none;
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dept-preview-card.visible {
+  display: block;
+  opacity: 1;
+}
+.dept-preview-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.dept-preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border-light);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.dept-preview-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.dept-preview-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  background: var(--accent);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent);
+  flex-shrink: 0;
+}
+.dept-preview-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.dept-preview-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  line-height: 1.3;
+}
+.dept-preview-action {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.dept-preview-action:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  gap: 12px;
+}
+
+/* Browser-style webpage preview placeholder */
+.dept-browser {
+  margin: 0 28px 28px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f1fa;
+}
+.dept-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #ebe8f5;
+  border-bottom: 1px solid var(--border);
+}
+.dept-browser-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.dept-browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1cce3;
+}
+.dept-browser-dots span:nth-child(1) { background: #f87171; }
+.dept-browser-dots span:nth-child(2) { background: #fbbf24; }
+.dept-browser-dots span:nth-child(3) { background: #34d399; }
+.dept-browser-url {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dept-browser-viewport {
+  position: relative;
+  min-height: 380px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 4%, #fff) 0%, #f8f6ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 24px;
+}
+.dept-browser-viewport::before {
+  content: '';
+  position: absolute;
+  inset: 24px;
+  border: 2px dashed color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 12px;
+  pointer-events: none;
+}
+.dept-placeholder-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  position: relative;
+  z-index: 1;
+}
+.dept-placeholder-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.dept-placeholder-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 360px;
+}
+
+/* ─── Live Cards ─── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  margin-bottom: 80px;
+}
+.cards-grid.hidden-by-filter,
+.soon-section.hidden-by-filter {
+  display: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 4px 4px 0 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.01);
+}
+.card:hover::before {
+  opacity: 1;
+}
+.card:hover::after {
+  opacity: 0.03;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  background: var(--accent);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: #059669;
+  background: #ecfdf5;
+}
+.card-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.card-dept {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 10px;
+  color: var(--text);
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+.card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.card-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.card-action {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s ease;
+}
+.card:hover .card-action {
+  gap: 12px;
+}
+
+/* ─── Stage Select ─── */
+.stage-select {
+  appearance: none;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 5px 28px 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  outline: none;
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239490b8'/%3E%3C/svg%3E") no-repeat right 10px center;
+  transition: border-color 0.2s;
+}
+.stage-select:hover { border-color: #8b5cf6; }
+.stage-select:focus { border-color: #8b5cf6; box-shadow: 0 0 0 2px rgba(139,92,246,0.15); }
+.stage-select.live { color: #059669; background-color: #ecfdf5; }
+.stage-select.dev { color: #7c3aed; background-color: #f5f3ff; }
+.stage-select.testing { color: #059669; background-color: #ecfdf5; }
+.stage-select.planning { color: #64748b; background-color: #f1f5f9; }
+
+/* ─── Section Header ─── */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  opacity: 0;
+}
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+.section-header span {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ─── Compact Cards ─── */
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.compact-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: 16px;
+  padding: 20px 22px;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+}
+.compact-card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.compact-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.compact-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  background: var(--accent);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.compact-dept {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.compact-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ─── Workflow CTA ─── */
+.workflow-cta {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  margin: 48px 0 64px;
+  padding: 36px 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(110deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.03) 48%, rgba(255,255,255,0.96));
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  opacity: 0;
+}
+.workflow-cta.visible {
+  display: flex;
+}
+.workflow-cta::after {
+  content: 'P';
+  position: absolute;
+  right: 24%;
+  top: 50%;
+  transform: translateY(-51%);
+  font: 700 150px/1 'Space Grotesk', sans-serif;
+  color: rgba(99, 102, 241, 0.035);
+  pointer-events: none;
+}
+.workflow-cta-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+.workflow-cta-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #8b5cf6;
+  font: 600 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+.workflow-cta h2 {
+  margin-bottom: 8px;
+  color: var(--text);
+  font: 700 26px/1.2 'Space Grotesk', sans-serif;
+  letter-spacing: -0.5px;
+}
+.workflow-cta p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.workflow-cta-action {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.workflow-cta-action:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(99,102,241,0.28);
+}
+
+/* ─── Footer ─── */
+.footer {
+  margin-top: 72px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-light);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  align-items: start;
+  gap: 40px;
+  opacity: 0;
+}
+.footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.footer-copy,
+.footer-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.footer-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.footer-link {
+  font-size: 13px;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+.footer-link:hover {
+  color: #4f46e5;
+}
+
+/* ─── Background decoration ─── */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+.bg-blob-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  right: -100px;
+  background: #8b5cf6;
+}
+.bg-blob-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -50px;
+  left: -80px;
+  background: #3b82f6;
+}
+
+/* ─── Edit hint tooltip ─── */
+.edit-hint {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  opacity: 0;
+  animation: hintIn 0.4s ease 1.5s forwards;
+}
+.edit-hint i { color: #8b5cf6; }
+@keyframes hintIn {
+  to { opacity: 1; }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .container { padding: 28px 18px 60px; }
+  .header { margin-bottom: 48px; }
+  .editorial-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+    padding-bottom: 32px;
+  }
+  .editorial-hero h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+  .editorial-aside {
+    padding-left: 18px;
+    max-width: 520px;
+  }
+  .directory-heading {
+    align-items: flex-end;
+  }
+  .directory {
+    margin-top: -8px;
+  }
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 2px 2px 10px;
+    margin: 0 -2px;
+    scrollbar-width: none;
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex: 0 0 auto; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .compact-grid { grid-template-columns: 1fr; }
+  .dept-browser { margin: 0 16px 16px; }
+  .dept-preview-meta { padding: 18px 16px; }
+  .dept-browser-viewport { min-height: 280px; }
+  .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .workflow-cta.visible {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+  .workflow-cta h2 { font-size: 22px; }
+  .workflow-cta-action { width: 100%; justify-content: center; }
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headline-line-inner {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .header,
+  .editorial-hero,
+  .directory-heading,
+  .filters,
+  .workflow-cta,
+  .dept-preview-card,
+  .card,
+  .compact-card,
+  .section-header,
+  .footer {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-blob bg-blob-1"></div>
+<div class="bg-blob bg-blob-2"></div>
+
+<!-- Edit hint -->
+<div class="edit-hint">
+  <i class="fa-solid fa-pencil"></i>
+  Кликните на любой текст, чтобы отредактировать
+</div>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-mark">P</div>
+      <div class="logo-text" contenteditable="true">PINE <span>workflows</span></div>
+    </div>
+    <div class="header-badge" contenteditable="true">Внутренняя витрина решений</div>
+  </header>
+
+  <!-- Editorial introduction -->
+  <section class="editorial-hero">
+    <div>
+      <div class="editorial-kicker" contenteditable="true">Внутренние решения · Команда PINE</div>
+      <h1 aria-label="Инструменты и агенты, которые мы строим для команды">
+        <span class="headline-line"><span class="headline-line-inner" contenteditable="true">Инструменты и агенты,</span></span>
+        <span class="headline-line"><span class="headline-line-inner" contenteditable="true">которые мы строим для команды</span></span>
+      </h1>
+    </div>
+    <aside class="editorial-aside">
+      <span class="editorial-index">PINE / WORKFLOWS / 01</span>
+      <p contenteditable="true">Внутренняя витрина цифровых решений для ежедневной работы команд.</p>
+      <div class="editorial-meta">
+        <span contenteditable="true">9 отделов</span>
+        <span class="editorial-meta-dot"></span>
+        <span contenteditable="true">19 решений</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Department directory -->
+  <section class="directory">
+    <div class="directory-heading">
+      <h2 contenteditable="true">Выберите направление</h2>
+      <span contenteditable="true">Директория отделов</span>
+    </div>
+    <div class="filters" aria-label="Отделы">
+      <button class="filter-btn" data-filter="proc">Гос. закуп</button>
+      <button class="filter-btn" data-filter="legal">Юр отдел</button>
+      <button class="filter-btn" data-filter="acad">Академический</button>
+      <button class="filter-btn" data-filter="b2b">B2B</button>
+      <button class="filter-btn" data-filter="pr">PR</button>
+      <button class="filter-btn" data-filter="ops">Оперблок</button>
+      <button class="filter-btn" data-filter="fin">Финансы</button>
+      <button class="filter-btn" data-filter="dist">Дистрибуция</button>
+      <button class="filter-btn" data-filter="wh">Склад</button>
+      <button class="filter-btn" data-filter="all">Все</button>
+    </div>
+  </section>
+
+  <!-- Department preview: one big card per department tab -->
+  <section class="dept-previews" id="dept-previews">
+
+    <div class="dept-preview-card" style="--accent: var(--proc)" data-dept="proc">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-gavel"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Гос. закуп</div>
+            <div class="dept-preview-title" contenteditable="true">Страница отдела гос. закупок</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / goszakup</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела гос. закупок</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--legal)" data-dept="legal">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Юр отдел</div>
+            <div class="dept-preview-title" contenteditable="true">Страница юридического отдела</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / legal</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы юридического отдела</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--acad)" data-dept="acad">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Академический</div>
+            <div class="dept-preview-title" contenteditable="true">Страница академического отдела</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / academic</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы академического отдела</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--b2b)" data-dept="b2b">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">B2B</div>
+            <div class="dept-preview-title" contenteditable="true">Страница отдела B2B</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / b2b</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела B2B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--pr)" data-dept="pr">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">PR</div>
+            <div class="dept-preview-title" contenteditable="true">Страница отдела PR</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / pr</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела PR</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--ops)" data-dept="ops">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-gears"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Оперблок</div>
+            <div class="dept-preview-title" contenteditable="true">Страница оперблока</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / ops</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы оперблока</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--fin)" data-dept="fin">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Финансы</div>
+            <div class="dept-preview-title" contenteditable="true">Страница финансового отдела</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / finance</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы финансового отдела</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--dist)" data-dept="dist">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Дистрибуция</div>
+            <div class="dept-preview-title" contenteditable="true">Страница отдела дистрибуции</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / distribution</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела дистрибуции</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dept-preview-card" style="--accent: var(--wh)" data-dept="wh">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Склад</div>
+            <div class="dept-preview-title" contenteditable="true">Страница складского отдела</div>
+          </div>
+        </div>
+        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url" contenteditable="true">pine.workflows / warehouse</div>
+        </div>
+        <div class="dept-browser-viewport">
+          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
+          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
+          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы складского отдела</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Live Projects (shown only on "Все") -->
+  <section class="cards-grid hidden-by-filter" id="live-grid">
+
+    <div class="card" style="--accent: var(--legal)" data-dept="legal">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Юр отдел</div>
+      <div class="card-title" contenteditable="true">Формирование 100 договоров (ИИ)</div>
+      <div class="card-desc" contenteditable="true">Формирование договоров из шаблона и списка поставщиков. Автоматическая подстановка реквизитов и условий.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--proc)" data-dept="proc">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Гос. закуп</div>
+      <div class="card-title" contenteditable="true">Парсер ГосЗакуп</div>
+      <div class="card-desc" contenteditable="true">Поиск и выгрузка нужных предложений по ключевым словам на сайте ГосЗакуп. Автоматический мониторинг новых лотов.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--proc)" data-dept="proc">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Гос. закуп</div>
+      <div class="card-title" contenteditable="true">Автоматизация формирования КП</div>
+      <div class="card-desc" contenteditable="true">Формирование нескольких вариантов коммерческих предложений из сметы. Экспорт в готовые форматы документов.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--proc)" data-dept="proc">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Гос. закуп</div>
+      <div class="card-title" contenteditable="true">Конвертер для тех. спец</div>
+      <div class="card-desc" contenteditable="true">Конвертация технических спецификаций между форматами. Сохранение структуры и полноты данных.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--proc)" data-dept="proc">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Гос. закуп</div>
+      <div class="card-title" contenteditable="true">ТехСпец агент</div>
+      <div class="card-desc" contenteditable="true">Формирование технической спецификации из сметы с помощью ИИ-агента. Автоматическая структуризация данных.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--acad)" data-dept="acad">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-user-plus"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Академический отдел</div>
+      <div class="card-title" contenteditable="true">Автоматизация регистрации</div>
+      <div class="card-desc" contenteditable="true">Регистрация и загрузка документов участников обучения. Автоматическая валидация и проверка данных.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--acad)" data-dept="acad">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">Академический отдел</div>
+      <div class="card-title" contenteditable="true">Автоматизация работы с таблицами (ИИ)</div>
+      <div class="card-desc" contenteditable="true">Обработка и структурирование учебных таблиц. Автоматическое форматирование, проверка и экспорт данных.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <div class="card" style="--accent: var(--pr)" data-dept="pr">
+      <div class="card-header">
+        <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+        <select class="stage-select live" onchange="updateStage(this)">
+          <option value="live" selected="">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+      <div class="card-dept" contenteditable="true">PR</div>
+      <div class="card-title" contenteditable="true">Сайт для проекта AulBiliim (Jelken)</div>
+      <div class="card-desc" contenteditable="true">Промо-сайт проекта AulBiliim. Полностью готовый к публикации и использованию продукт.</div>
+      <div class="card-footer">
+        <span class="card-action">Открыть <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Coming Soon (shown only on "Все") -->
+  <section class="soon-section hidden-by-filter" id="soon-section">
+    <div class="section-header">
+      <h2 contenteditable="true">Скоро</h2>
+      <span contenteditable="true">В разработке, планировании и тестировании</span>
+    </div>
+
+    <div class="compact-grid" id="soon-grid">
+
+      <div class="compact-card" style="--accent: var(--legal)" data-dept="legal">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-file-signature"></i></div>
+          <div class="compact-dept" contenteditable="true">Юр отдел</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Программа для формирования договоров</div>
+        <select class="stage-select dev" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev" selected="">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--b2b)" data-dept="b2b">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <div class="compact-dept" contenteditable="true">B2B</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Автоматизация поиска товаров и сопоставления (ИИ Агент)</div>
+        <select class="stage-select dev" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev" selected="">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--ops)" data-dept="ops">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-microchip"></i></div>
+          <div class="compact-dept" contenteditable="true">Оперблок</div>
+        </div>
+        <div class="compact-title" contenteditable="true">ИИ Агент — мобильный ассистент</div>
+        <select class="stage-select dev" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev" selected="">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--ops)" data-dept="ops">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-gears"></i></div>
+          <div class="compact-dept" contenteditable="true">Оперблок</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Программа для оптимизации процессов</div>
+        <select class="stage-select dev" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev" selected="">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--proc)" data-dept="proc">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-bell"></i></div>
+          <div class="compact-dept" contenteditable="true">Гос. закуп</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Парсинг ТГ бот — уведомления ГосЗакуп</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--b2b)" data-dept="b2b">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-user-magnifying-glass"></i></div>
+          <div class="compact-dept" contenteditable="true">B2B</div>
+        </div>
+        <div class="compact-title" contenteditable="true">ИИ поиск поставщиков</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--dist)" data-dept="dist">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="compact-dept" contenteditable="true">Дистрибуция</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Новый проект</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--wh)" data-dept="wh">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <div class="compact-dept" contenteditable="true">Склад</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Новый проект</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--fin)" data-dept="fin">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="compact-dept" contenteditable="true">Финансы</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Программа для финансиста</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--proc)" data-dept="proc">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-flask-vial"></i></div>
+          <div class="compact-dept" contenteditable="true">Гос. закуп</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Проект уточняется</div>
+        <select class="stage-select testing" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing" selected="">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--legal)" data-dept="legal">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div class="compact-dept" contenteditable="true">Юр отдел</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Проект уточняется</div>
+        <select class="stage-select testing" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing" selected="">● Тестирование</option>
+          <option value="planning">● Планирование</option>
+        </select>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Workflow request -->
+  <section class="workflow-cta" id="workflow-cta" aria-label="Предложить workflow">
+    <div class="workflow-cta-copy">
+      <span class="workflow-cta-label">Следующий workflow</span>
+      <h2 contenteditable="true">Есть процесс, который стоит автоматизировать?</h2>
+      <p contenteditable="true">Расскажите команде о повторяющейся задаче — вместе найдём подходящий формат решения.</p>
+    </div>
+    <a href="#" class="workflow-cta-action">
+      Предложить workflow <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>
+      <div class="footer-brand" contenteditable="true">PINE workflows</div>
+      <div class="footer-copy" contenteditable="true">Внутренние цифровые решения для команд PINE.</div>
+    </div>
+    <div class="footer-meta" contenteditable="true">Внутреннее использование · 2026</div>
+    <a href="#" class="footer-link" contenteditable="true">Связаться с командой →</a>
+  </footer>
+
+</div>
+
+<script>
+// ─── Stage Select Color Update ───
+function updateStage(select) {
+  select.className = 'stage-select ' + select.value;
+}
+
+// ─── Filter / view refs ───
+const filterBtns = document.querySelectorAll('.filter-btn');
+const liveGrid = document.getElementById('live-grid');
+const soonSection = document.getElementById('soon-section');
+const deptPreviews = document.getElementById('dept-previews');
+const deptCards = document.querySelectorAll('.dept-preview-card');
+const workflowCta = document.getElementById('workflow-cta');
+
+function setActiveFilter(filter) {
+  filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+  applyFilter(filter);
+}
+
+function revealDeptCards(cards) {
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(16px)';
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, i * 40);
+  });
+}
+
+function applyFilter(filter) {
+  const showInventory = filter === 'all';
+  const showDeptCard = !showInventory;
+
+  liveGrid.classList.toggle('hidden-by-filter', !showInventory);
+  soonSection.classList.toggle('hidden-by-filter', !showInventory);
+  deptPreviews.classList.toggle('visible', showDeptCard);
+  workflowCta.classList.add('visible');
+  workflowCta.style.opacity = '0';
+  workflowCta.style.transform = 'translateY(16px)';
+  requestAnimationFrame(() => {
+    workflowCta.style.transition = 'opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+    workflowCta.style.opacity = '1';
+    workflowCta.style.transform = 'translateY(0)';
+  });
+
+  const visibleCards = [];
+  deptCards.forEach(card => {
+    const match = showDeptCard && card.dataset.dept === filter;
+    card.classList.toggle('visible', match);
+    if (match) visibleCards.push(card);
+  });
+  if (visibleCards.length) revealDeptCards(visibleCards);
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => setActiveFilter(btn.dataset.filter));
+});
+
+deptCards.forEach(card => {
+  const action = card.querySelector('.dept-preview-action');
+  if (action) {
+    action.addEventListener('click', (e) => e.preventDefault());
+  }
+});
+
+document.querySelector('.workflow-cta-action').addEventListener('click', (e) => e.preventDefault());
+
+// ─── Entrance Animations ───
+function animateIn() {
+  const elements = [
+    ...document.querySelectorAll('.header, .editorial-hero, .directory-heading, .filters, .section-header, .footer'),
+    ...document.querySelectorAll('.card'),
+    ...document.querySelectorAll('.compact-card')
+  ];
+  elements.forEach((el, i) => {
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, i * 50);
+  });
+}
+
+document.querySelectorAll('.header, .editorial-hero, .directory-heading, .filters, .section-header, .footer, .card, .compact-card').forEach(el => {
+  el.style.transform = 'translateY(16px)';
+});
+
+animateIn();
+
+// ─── Hide hint after 5s ───
+setTimeout(() => {
+  const hint = document.querySelector('.edit-hint');
+  if (hint) {
+    hint.style.transition = 'opacity 0.4s';
+    hint.style.opacity = '0';
+    setTimeout(() => hint.remove(), 400);
+  }
+}, 6000);
+</script>
+
+
+
+</body></html>
