@@ -1336,12 +1336,12 @@ a.card-action {
       <span contenteditable="true">Директория отделов</span>
     </div>
     <div class="filters" aria-label="Отделы">
+      <button class="filter-btn" data-filter="ops">Оперблок</button>
       <button class="filter-btn" data-filter="proc">Гос. закуп</button>
       <button class="filter-btn" data-filter="legal">Юр отдел</button>
       <button class="filter-btn" data-filter="acad">Академический</button>
       <button class="filter-btn" data-filter="b2b">B2B</button>
       <button class="filter-btn" data-filter="pr">PR</button>
-      <button class="filter-btn" data-filter="ops">Оперблок</button>
       <button class="filter-btn" data-filter="fin">Финансы</button>
       <button class="filter-btn" data-filter="dist">Дистрибуция</button>
       <button class="filter-btn" data-filter="wh">Склад</button>
@@ -1351,6 +1351,28 @@ a.card-action {
 
   <!-- Department preview: one big card per department tab -->
   <section class="dept-previews" id="dept-previews">
+
+    <div class="dept-preview-card" style="--accent: var(--ops)" data-dept="ops">
+      <div class="dept-preview-meta">
+        <div class="dept-preview-meta-left">
+          <div class="dept-preview-icon"><i class="fa-solid fa-gears"></i></div>
+          <div>
+            <div class="dept-preview-label" contenteditable="true">Оперблок</div>
+            <div class="dept-preview-title" contenteditable="true">OperBlock</div>
+          </div>
+        </div>
+        <a href="https://operblock-production.up.railway.app/" target="_blank" rel="noopener noreferrer" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="dept-browser">
+        <div class="dept-browser-bar">
+          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
+          <div class="dept-browser-url">operblock-production.up.railway.app</div>
+        </div>
+        <div class="dept-browser-viewport dept-browser-viewport--live">
+          <iframe class="dept-browser-iframe" src="https://operblock-production.up.railway.app/" title="OperBlock" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
 
     <div class="dept-preview-card" style="--accent: var(--proc)" data-dept="proc">
       <div class="dept-preview-meta">
@@ -1464,28 +1486,6 @@ a.card-action {
           <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
           <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
           <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела PR</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dept-preview-card" style="--accent: var(--ops)" data-dept="ops">
-      <div class="dept-preview-meta">
-        <div class="dept-preview-meta-left">
-          <div class="dept-preview-icon"><i class="fa-solid fa-gears"></i></div>
-          <div>
-            <div class="dept-preview-label" contenteditable="true">Оперблок</div>
-            <div class="dept-preview-title" contenteditable="true">OperBlock</div>
-          </div>
-        </div>
-        <a href="https://operblock-production.up.railway.app/" target="_blank" rel="noopener noreferrer" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="dept-browser">
-        <div class="dept-browser-bar">
-          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url">operblock-production.up.railway.app</div>
-        </div>
-        <div class="dept-browser-viewport dept-browser-viewport--live">
-          <iframe class="dept-browser-iframe" src="https://operblock-production.up.railway.app/" title="OperBlock" loading="lazy"></iframe>
         </div>
       </div>
     </div>
