@@ -1724,34 +1724,6 @@ a.card-action {
 
     <div class="compact-grid" id="soon-grid">
 
-      <div class="compact-card" style="--accent: var(--legal)" data-dept="legal">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-file-signature"></i></div>
-          <div class="compact-dept" contenteditable="true">Юр отдел</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Программа для формирования договоров</div>
-        <select class="stage-select dev" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev" selected="">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--b2b)" data-dept="b2b">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-          <div class="compact-dept" contenteditable="true">B2B</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Автоматизация поиска товаров и сопоставления (ИИ Агент)</div>
-        <select class="stage-select dev" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev" selected="">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning">● Планирование</option>
-        </select>
-      </div>
-
       <div class="compact-card" style="--accent: var(--ops)" data-dept="ops">
         <div class="compact-header">
           <div class="compact-icon"><i class="fa-solid fa-microchip"></i></div>
@@ -1766,68 +1738,12 @@ a.card-action {
         </select>
       </div>
 
-      <div class="compact-card" style="--accent: var(--ops)" data-dept="ops">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-gears"></i></div>
-          <div class="compact-dept" contenteditable="true">Оперблок</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Программа для оптимизации процессов</div>
-        <select class="stage-select dev" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev" selected="">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--proc)" data-dept="proc">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-bell"></i></div>
-          <div class="compact-dept" contenteditable="true">Гос. закуп</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Парсинг ТГ бот — уведомления ГосЗакуп</div>
-        <select class="stage-select planning" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning" selected="">● Планирование</option>
-        </select>
-      </div>
-
       <div class="compact-card" style="--accent: var(--b2b)" data-dept="b2b">
         <div class="compact-header">
           <div class="compact-icon"><i class="fa-solid fa-user-magnifying-glass"></i></div>
           <div class="compact-dept" contenteditable="true">B2B</div>
         </div>
         <div class="compact-title" contenteditable="true">ИИ поиск поставщиков</div>
-        <select class="stage-select planning" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning" selected="">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--dist)" data-dept="dist">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-truck-fast"></i></div>
-          <div class="compact-dept" contenteditable="true">Дистрибуция</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Новый проект</div>
-        <select class="stage-select planning" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev">● Разработка</option>
-          <option value="testing">● Тестирование</option>
-          <option value="planning" selected="">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--wh)" data-dept="wh">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-warehouse"></i></div>
-          <div class="compact-dept" contenteditable="true">Склад</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Новый проект</div>
         <select class="stage-select planning" onchange="updateStage(this)">
           <option value="live">● Работает</option>
           <option value="dev">● Разработка</option>
@@ -1847,34 +1763,6 @@ a.card-action {
           <option value="dev">● Разработка</option>
           <option value="testing">● Тестирование</option>
           <option value="planning" selected="">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--proc)" data-dept="proc">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-flask-vial"></i></div>
-          <div class="compact-dept" contenteditable="true">Гос. закуп</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Проект уточняется</div>
-        <select class="stage-select testing" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev">● Разработка</option>
-          <option value="testing" selected="">● Тестирование</option>
-          <option value="planning">● Планирование</option>
-        </select>
-      </div>
-
-      <div class="compact-card" style="--accent: var(--legal)" data-dept="legal">
-        <div class="compact-header">
-          <div class="compact-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="compact-dept" contenteditable="true">Юр отдел</div>
-        </div>
-        <div class="compact-title" contenteditable="true">Проект уточняется</div>
-        <select class="stage-select testing" onchange="updateStage(this)">
-          <option value="live">● Работает</option>
-          <option value="dev">● Разработка</option>
-          <option value="testing" selected="">● Тестирование</option>
-          <option value="planning">● Планирование</option>
         </select>
       </div>
 
