@@ -1345,7 +1345,7 @@ a.card-action {
       <button class="filter-btn" data-filter="fin">Финансы</button>
       <button class="filter-btn" data-filter="dist">Дистрибуция</button>
       <button class="filter-btn" data-filter="wh">Склад</button>
-      <button class="filter-btn" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="soon">Скоро</button>
     </div>
   </section>
 
@@ -1564,7 +1564,7 @@ a.card-action {
 
   </section>
 
-  <!-- Live Projects (hidden — "Все" shows coming soon only) -->
+  <!-- Live Projects (hidden — «Скоро» tab shows coming soon only) -->
   <section class="cards-grid hidden-by-filter" id="live-grid" hidden aria-hidden="true">
 
     <div class="card" style="--accent: var(--legal)" data-dept="legal">
@@ -1713,7 +1713,7 @@ a.card-action {
 
   </section>
 
-  <!-- Coming Soon (shown only on "Все") -->
+  <!-- Coming Soon (shown only on «Скоро» tab) -->
   <section class="soon-section hidden-by-filter" id="soon-section">
     <div class="section-header">
       <h2 contenteditable="true">Скоро</h2>
@@ -1823,11 +1823,11 @@ function revealDeptCards(cards) {
 }
 
 function applyFilter(filter) {
-  const showAllView = filter === 'all';
-  const showDeptCard = !showAllView;
+  const showSoonView = filter === 'soon';
+  const showDeptCard = !showSoonView;
 
   liveGrid.classList.add('hidden-by-filter');
-  soonSection.classList.toggle('hidden-by-filter', !showAllView);
+  soonSection.classList.toggle('hidden-by-filter', !showSoonView);
   deptPreviews.classList.toggle('visible', showDeptCard);
   workflowCta.classList.add('visible');
   workflowCta.style.opacity = '0';
@@ -1851,7 +1851,7 @@ filterBtns.forEach(btn => {
   btn.addEventListener('click', () => setActiveFilter(btn.dataset.filter));
 });
 
-setActiveFilter('all');
+setActiveFilter('soon');
 
 deptCards.forEach(card => {
   const action = card.querySelector('.dept-preview-action');
