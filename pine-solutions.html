@@ -742,6 +742,36 @@ body {
   border-radius: 12px;
   pointer-events: none;
 }
+.dept-browser-viewport--live {
+  padding: 0;
+  display: block;
+  min-height: 420px;
+}
+.dept-browser-viewport--live::before {
+  display: none;
+}
+.dept-browser-iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+  background: #fff;
+}
+.card-action,
+a.card-action {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s ease;
+  text-decoration: none;
+}
+.card:hover .card-action,
+.card:hover a.card-action {
+  gap: 12px;
+}
 .dept-placeholder-icon {
   width: 64px;
   height: 64px;
@@ -909,18 +939,6 @@ body {
   align-items: center;
   position: relative;
   z-index: 1;
-}
-.card-action {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: gap 0.2s ease;
-}
-.card:hover .card-action {
-  gap: 12px;
 }
 
 /* ─── Stage Select ─── */
@@ -1340,20 +1358,18 @@ body {
           <div class="dept-preview-icon"><i class="fa-solid fa-gavel"></i></div>
           <div>
             <div class="dept-preview-label" contenteditable="true">Гос. закуп</div>
-            <div class="dept-preview-title" contenteditable="true">Страница отдела гос. закупок</div>
+            <div class="dept-preview-title" contenteditable="true">База данных Госзакупок</div>
           </div>
         </div>
-        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://pinegroup-gz.onrender.com/" target="_blank" rel="noopener noreferrer" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="dept-browser">
         <div class="dept-browser-bar">
           <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url" contenteditable="true">pine.workflows / goszakup</div>
+          <div class="dept-browser-url">pinegroup-gz.onrender.com</div>
         </div>
-        <div class="dept-browser-viewport">
-          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
-          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
-          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела гос. закупок</div>
+        <div class="dept-browser-viewport dept-browser-viewport--live">
+          <iframe class="dept-browser-iframe" src="https://pinegroup-gz.onrender.com/" title="База данных Госзакупок" loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -1460,20 +1476,18 @@ body {
           <div class="dept-preview-icon"><i class="fa-solid fa-gears"></i></div>
           <div>
             <div class="dept-preview-label" contenteditable="true">Оперблок</div>
-            <div class="dept-preview-title" contenteditable="true">Страница оперблока</div>
+            <div class="dept-preview-title" contenteditable="true">OperBlock</div>
           </div>
         </div>
-        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://operblock-production.up.railway.app/" target="_blank" rel="noopener noreferrer" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="dept-browser">
         <div class="dept-browser-bar">
           <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url" contenteditable="true">pine.workflows / ops</div>
+          <div class="dept-browser-url">operblock-production.up.railway.app</div>
         </div>
-        <div class="dept-browser-viewport">
-          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
-          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
-          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы оперблока</div>
+        <div class="dept-browser-viewport dept-browser-viewport--live">
+          <iframe class="dept-browser-iframe" src="https://operblock-production.up.railway.app/" title="OperBlock" loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -1552,8 +1566,8 @@ body {
 
   </section>
 
-  <!-- Live Projects (shown only on "Все") -->
-  <section class="cards-grid hidden-by-filter" id="live-grid">
+  <!-- Live Projects (hidden — "Все" shows coming soon only) -->
+  <section class="cards-grid hidden-by-filter" id="live-grid" hidden aria-hidden="true">
 
     <div class="card" style="--accent: var(--legal)" data-dept="legal">
       <div class="card-header">
@@ -1923,11 +1937,11 @@ function revealDeptCards(cards) {
 }
 
 function applyFilter(filter) {
-  const showInventory = filter === 'all';
-  const showDeptCard = !showInventory;
+  const showAllView = filter === 'all';
+  const showDeptCard = !showAllView;
 
-  liveGrid.classList.toggle('hidden-by-filter', !showInventory);
-  soonSection.classList.toggle('hidden-by-filter', !showInventory);
+  liveGrid.classList.add('hidden-by-filter');
+  soonSection.classList.toggle('hidden-by-filter', !showAllView);
   deptPreviews.classList.toggle('visible', showDeptCard);
   workflowCta.classList.add('visible');
   workflowCta.style.opacity = '0';
@@ -1951,9 +1965,11 @@ filterBtns.forEach(btn => {
   btn.addEventListener('click', () => setActiveFilter(btn.dataset.filter));
 });
 
+setActiveFilter('all');
+
 deptCards.forEach(card => {
   const action = card.querySelector('.dept-preview-action');
-  if (action) {
+  if (action?.getAttribute('href') === '#') {
     action.addEventListener('click', (e) => e.preventDefault());
   }
 });
