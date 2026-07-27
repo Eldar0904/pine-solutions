@@ -1322,7 +1322,7 @@ a.card-action {
       <span class="editorial-index">PINE / WORKFLOWS / 01</span>
       <p contenteditable="true">Внутренняя витрина цифровых решений для ежедневной работы команд.</p>
       <div class="editorial-meta">
-        <span contenteditable="true">9 отделов</span>
+        <span contenteditable="true">6 отделов</span>
         <span class="editorial-meta-dot"></span>
         <span contenteditable="true">19 решений</span>
       </div>
@@ -1342,9 +1342,6 @@ a.card-action {
       <button class="filter-btn" data-filter="acad">Академический</button>
       <button class="filter-btn" data-filter="b2b">B2B</button>
       <button class="filter-btn" data-filter="pr">PR</button>
-      <button class="filter-btn" data-filter="fin">Финансы</button>
-      <button class="filter-btn" data-filter="dist">Дистрибуция</button>
-      <button class="filter-btn" data-filter="wh">Склад</button>
       <button class="filter-btn" data-filter="soon">Скоро</button>
     </div>
   </section>
@@ -1482,78 +1479,6 @@ a.card-action {
           <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
           <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
           <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела PR</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dept-preview-card" style="--accent: var(--fin)" data-dept="fin">
-      <div class="dept-preview-meta">
-        <div class="dept-preview-meta-left">
-          <div class="dept-preview-icon"><i class="fa-solid fa-chart-pie"></i></div>
-          <div>
-            <div class="dept-preview-label" contenteditable="true">Финансы</div>
-            <div class="dept-preview-title" contenteditable="true">Страница финансового отдела</div>
-          </div>
-        </div>
-        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="dept-browser">
-        <div class="dept-browser-bar">
-          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url" contenteditable="true">pine.workflows / finance</div>
-        </div>
-        <div class="dept-browser-viewport">
-          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
-          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
-          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы финансового отдела</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dept-preview-card" style="--accent: var(--dist)" data-dept="dist">
-      <div class="dept-preview-meta">
-        <div class="dept-preview-meta-left">
-          <div class="dept-preview-icon"><i class="fa-solid fa-truck-fast"></i></div>
-          <div>
-            <div class="dept-preview-label" contenteditable="true">Дистрибуция</div>
-            <div class="dept-preview-title" contenteditable="true">Страница отдела дистрибуции</div>
-          </div>
-        </div>
-        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="dept-browser">
-        <div class="dept-browser-bar">
-          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url" contenteditable="true">pine.workflows / distribution</div>
-        </div>
-        <div class="dept-browser-viewport">
-          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
-          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
-          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы отдела дистрибуции</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="dept-preview-card" style="--accent: var(--wh)" data-dept="wh">
-      <div class="dept-preview-meta">
-        <div class="dept-preview-meta-left">
-          <div class="dept-preview-icon"><i class="fa-solid fa-warehouse"></i></div>
-          <div>
-            <div class="dept-preview-label" contenteditable="true">Склад</div>
-            <div class="dept-preview-title" contenteditable="true">Страница складского отдела</div>
-          </div>
-        </div>
-        <a href="#" class="dept-preview-action">Открыть <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <div class="dept-browser">
-        <div class="dept-browser-bar">
-          <div class="dept-browser-dots"><span></span><span></span><span></span></div>
-          <div class="dept-browser-url" contenteditable="true">pine.workflows / warehouse</div>
-        </div>
-        <div class="dept-browser-viewport">
-          <div class="dept-placeholder-icon"><i class="fa-solid fa-display"></i></div>
-          <div class="dept-placeholder-text" contenteditable="true">Превью страницы</div>
-          <div class="dept-placeholder-sub" contenteditable="true">Здесь будет превью веб-страницы складского отдела</div>
         </div>
       </div>
     </div>
@@ -1752,6 +1677,48 @@ a.card-action {
           <div class="compact-dept" contenteditable="true">Финансы</div>
         </div>
         <div class="compact-title" contenteditable="true">Программа для финансиста</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--dist)" data-dept="dist">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="compact-dept" contenteditable="true">Дистрибуция</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Страница отдела дистрибуции</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--wh)" data-dept="wh">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <div class="compact-dept" contenteditable="true">Склад</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Страница складского отдела</div>
+        <select class="stage-select planning" onchange="updateStage(this)">
+          <option value="live">● Работает</option>
+          <option value="dev">● Разработка</option>
+          <option value="testing">● Тестирование</option>
+          <option value="planning" selected="">● Планирование</option>
+        </select>
+      </div>
+
+      <div class="compact-card" style="--accent: var(--ops)" data-dept="ops">
+        <div class="compact-header">
+          <div class="compact-icon"><i class="fa-solid fa-square-poll-vertical"></i></div>
+          <div class="compact-dept" contenteditable="true">Опросы</div>
+        </div>
+        <div class="compact-title" contenteditable="true">Опросы</div>
         <select class="stage-select planning" onchange="updateStage(this)">
           <option value="live">● Работает</option>
           <option value="dev">● Разработка</option>
